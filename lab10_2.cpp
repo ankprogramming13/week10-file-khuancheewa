@@ -1,4 +1,17 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
 int main() {
-        /* code */
-        return 0;
+    string line;
+    ifstream myfile ("example.txt");
+    if (myfile.is_open())
+    {
+        while (getline (myfile,line))
+        {
+            cout << line << '\n';
+        }
+        myfile.close();
+    }
+    else cout << "Unable to open file";
+    return 0;
 }
